@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>회원가입</h1>
+            <label for="username">사용자명:</label>
+            <br>
+            <input name="username" type="text" value="">
+            <br>
+            <label for="password1">비밀번호:</label>
+            <br>
+            <input name="password1" type="password" value="">
+            <br>
+            <label for="password2">비밀번호 확인:</label>
+            <br>
+            <input name="password2" type="password" value="">
+            <br>
+            <label for="birth_year">태어난 연도:</label>
+            <br>
+            <input name="birth_year" type="number" value="2000">
+            <br>
+            <label for="height">키:</label>
+            <br>
+            <input name="height" type="number" step="0.01" value="150">
+            <br>
+            <label for="weight">몸무게:</label>
+            <br>
+            <input name="weight" type="number" step="0.01" value="50">
+            <br>
+            <label for="exercise_area">부족한 운동 부위:</label>
+            <br>
+            <input type="checkbox" name="exercise_area" value="팔꿈치 위"> 팔꿈치 위
+            <br>
+            <input type="checkbox" name="exercise_area" value="팔꿈치 아래"> 팔꿈치 아래
+            <br>
+            <input type="checkbox" name="exercise_area" value="허리"> 허리
+            <br>
+            <input type="checkbox" name="exercise_area" value="허벅지"> 허벅지
+            <br>
+            <input type="checkbox" name="exercise_area" value="종아리"> 종아리
+            <br>
+            <br>
+            <input class="btn btn-primary" type="submit" value="회원가입">
+        </form>
+    </div>
+{% endblock %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>회원가입</h1>
+            <label for="username">사용자명:</label>
+            <br>
+            <input name="username" type="text" value="">
+            <br>
+            <label for="password1">비밀번호:</label>
+            <br>
+            <input name="password1" type="password" value="">
+            <br>
+            <label for="password2">비밀번호 확인:</label>
+            <br>
+            <input name="password2" type="password" value="">
+            <br>
+            <br>
+            <input class="btn btn-primary" type="submit" value="회원가입">
+        </form>
+    </div>
+{% endblock %} {% endcomment %}

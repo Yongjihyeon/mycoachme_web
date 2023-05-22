@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>제목 - {{post.title}}</h1><br>
+    날짜 - {{post.date}}<br>
+    본문 - {{post.body}}<br>
+    {% if post.image %}
+        <img src="{{post.image.url}}">
+        <br><br>
+    {% endif %}
+    <a href="{% url 'update' post.id %}">수정</a>
+    <a href="{% url 'delete' post.id %}">삭제</a>
+    <br><br>
+    댓글 :
+    <br> 
+    {% for comment in comments %}
+    {{comment.body}} - {{comment.date}} - {{user.username}}
+    <br>
+    {% endfor %}
+
+    <br><br>
+    댓글 달기 : 
+    <form method="POST">
+        {% csrf_token %}
+        <input name="body" type="text" value="">
+        <input class="btn btn-primary" type="submit" value="저장">
+    </form>
+</div>
+{% endblock %}
